@@ -1,0 +1,267 @@
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color:rgb(251, 251, 251);
+}
+
+
+.container {
+  max-width: 400px;
+  margin: 200px auto;
+  background-color:#fffcfc94;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(52, 189, 93, 0.3);
+}
+
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #c0392b;
+}
+
+p {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+button.payment {
+  width: 250px; 
+  height: 50px; 
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+button.payment:hover {
+  background-color: #c0392b;
+}
+
+.h2 {
+  margin: 3px;
+}
+.text-end {
+  text-align: end;
+}
+
+
+.PaymentModalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.PaymentModal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(52, 189, 93, 0.1);
+  max-width: 400px;
+  width: 100%;
+  margin: auto; /* Added for centering horizontally */
+}
+
+
+.PaymentModal h2 {
+  margin-bottom: 20px;
+}
+
+.PaymentModal label {
+  display:block;
+  margin-bottom: 10px;
+}
+
+.PaymentModal input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.PaymentModal button {
+   
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.PaymentModal .payButton{
+  width: 300px; 
+  height: 50px;
+
+}
+
+.PaymentModal button:hover {
+  background-color: #45a049;
+}
+
+.PaymentModal .closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #f44336;
+}
+
+.PaymentModal .closeButton:hover {
+  background-color: #d32f2f;
+}
+
+.PaymentModal .closeButton::before {
+  content: "×";
+  font-size: 20px;
+  color: white;
+}
+
+.PaymentModal .closeButton:focus {
+  outline: none;
+}
+
+/* Add this to your existing styles or create a new file, e.g., PaymentModalButtons.css */
+
+.PaymentModalButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1px;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.PaymentModalButtons button {
+  width: 300px; 
+  height: 35px; 
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.PaymentModalButtons button.paypal {
+  margin-bottom: 10px;
+  background-color: #003087;
+  color: #fff;
+}
+
+.PaymentModalButtons button.gpay {
+  background-color: #4285f4;
+  color: #fff;
+}
+
+.PaymentModalButtons button:hover {
+  opacity: 0.9;
+}
+
+.horizontal-line {
+  border: none;
+  height: 0.5px; /* Adjust as needed */
+  background-color: #8d8c8c; /* Adjust color as needed */
+  margin: 10px 0; /* Adjust margin as needed */
+  padding: 1px;
+}
+
+
+/*
+.PaymentModal .input-row {
+  display: flex;
+  align-items: center;
+}
+
+.PaymentModal .input-row > div {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px; 
+}
+
+.PaymentModal .input-row label {
+  margin-bottom: 5px;
+}
+
+.PaymentModal .input-row input {
+  width: 100%;
+  padding: 8px;
+}
+*/
+.PaymentPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.PaymentModal .input-row {
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+.exp {
+  font-size: 0.75rem;
+  width: 50%;
+  margin-right: 20px;
+}
+
+.cvc {
+  font-size: 0.75rem;
+  width: 50%;
+  margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+

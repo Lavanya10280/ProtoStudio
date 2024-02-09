@@ -1,0 +1,28 @@
+/* PopupMessage.css */
+
+.popup-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    color: #4caf50; /* Green color for the message text */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .popup-message.visible {
+    opacity: 1;
+  }
+  
+  .tick-icon {
+    color: #4caf50; /* Green color for the tick icon */
+    margin-right: 10px;
+  }
+  

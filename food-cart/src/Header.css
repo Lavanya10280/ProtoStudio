@@ -1,0 +1,81 @@
+/* Header.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #8e8282;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .logo {
+    max-width: 80px;  /* Adjusted size for the bulb logo */
+    max-height: 80px;
+    margin-bottom: 5px; /* Adjusted margin to move the logo down */
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  #homeLink { background-color: #faf9f8; }
+  #aboutLink { background-color: #f2f4f5; }
+  #contactLink { background-color: #f7faf9; }
+  
+  .search-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .search-box {
+    padding: 10px;
+    width: 250px;
+    background-color: black;  /* Set the background color to black */
+    color: white;  /* Set text color to white */
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .search-logo {
+    max-width: 30px;  /* Adjusted size for the search logo */
+    max-height: 30px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #cartLink {
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .cart-logo {
+    max-width: 40px;  /* Adjusted size for the cart logo */
+    max-height: 40px;
+  }
+  
