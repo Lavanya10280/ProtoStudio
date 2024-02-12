@@ -1,33 +1,25 @@
 import React from 'react';
-import './Footer.css';
-//hello
+import './Footer.css'; // Import your CSS file for styling
 
 const Footer = () => {
   return (
-    <div className="footer-content">
-      <div className="social-links">
-        <h3>Follow Us</h3>
-        <a href="https://youtube.com/@yummy2555?si=-rY04kHimF_ke6w0" className="social-link" target="_blank">
-          <img src="utube.jpeg" alt="YouTube" />
-        </a>
-        <a href="https://x.com/NobuRestaurants?s=20" className="social-link" target="_blank">
-          <img src="twitter.png" alt="Twitter" />
-        </a>
-        <a href="https://www.instagram.com/yummyfried?igsh=MWV6aXZya2ZhcDJodw==" className="social-link" target="_blank">
-          <img src="instagram.jpeg" alt="Instagram" />
-        </a>
+    <footer>
+      <div className="social-media">
+        <a href="https://www.instagram.com/thefoodiechefff/?hl=en"><img src="/instagram.jpeg" alt="Instagram" /></a>
+        <a href="https://www.youtube.com/playlist?list=PLlS27tHjEWD-L0qNwqI_XTb16xH6MADVe"><img src="/utube.jpeg" alt="YouTube" /></a>
+        <a href="https://twitter.com/cafecoffeeday?lang=en"><img src="/twitter.png" alt="Twitter" /></a>
       </div>
-      <div className="contact-us">
-        <h3>Contact Us</h3>
-        <p>Email: yummycafe@gmail.com</p>
-        <p>Phone: 9338239010</p>
-        <p>Address: Saravanampatti, Coimbatore</p>
+      <div className="contact-info">
+        <h4>GET IN TOUCH</h4>
+        <p>5/278, Saravanampatti, Coimbatore.</p>
+        <p>Email: yummysite@gmail.com</p>
+        <p>Phone: 9081264520</p>
       </div>
-      <div className="copyrights">
-        <p>&copy; 2024 Yummy site. All rights reserved.</p>
+      <div className="copyright">
+        <p>&copy; 2024 Yummysite. All rights reserved.</p>
       </div>
-    </div>
+    </footer>
   );
-}
+};
 
 export default Footer;
