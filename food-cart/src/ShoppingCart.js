@@ -62,13 +62,19 @@ const ShoppingCart = () => {
       {/* List of items */}
       <ul>
         {items.map(item => (
-          <li key={item.id}>
-            {item.name} <t /> ${item.price}
-            
+          <li key={item.id} className='itemdesc'>
+            <div className='fixed-length-text'>
+            {item.name} <br />
+            <button onClick={() => handleDelete(item.id)} className='button del'>Delete</button>
+            </div> 
+            <t /> 
+            <div className="text-end">
+              ${item.price} 
             <button onClick={() => handleIncreaseQuantity(item.id)} >+</button>
-            <div className="text-end">{item.quantity}</div>
+           <div className='quantity-border'> {item.quantity}</div>
             <button onClick={() => handleDecreaseQuantity(item.id)} >-</button><br />
-            <button onClick={() => handleDelete(item.id)}>Delete</button>
+            
+            </div>
             
           </li>
         ))}
