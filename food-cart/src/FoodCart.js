@@ -1,5 +1,3 @@
-// FoodCart.js
-
 import React from 'react';
 import PopupMessage from './PopupMessage';
 import './FoodCart.css'; // Import your stylesheet
@@ -10,8 +8,12 @@ class FoodCart extends React.Component {
     popupMessage: '',
   };
 
-  addToCart = (foodName, price) => {
-    this.setState({ showPopup: true, popupMessage: `Added ${foodName} to the cart.` });
+  addToCart = (item) => {
+    // Call the addItemToCart function passed from the parent component
+    this.props.addItemToCart(item);
+
+    // Show the popup message
+    this.setState({ showPopup: true, popupMessage: `Added ${item.name} to the cart.` });
 
     // Close the popup after 5 seconds
     setTimeout(() => {
@@ -29,32 +31,32 @@ class FoodCart extends React.Component {
         <h2>Food Items</h2>
         <div className="food-grid">
           {/* Food 1 */}
-          <div className="food-box" onClick={() => this.addToCart('Margherita Pizza', 10.99)}>
+          <div className="food-box" onClick={() => this.addToCart({ name: 'Margherita Pizza', price: 10.99 })}>
             <img src="/margherita_pizza.jpg" alt="Margherita Pizza" />
             <div className="food-details">
               <p>Margherita Pizza</p>
               <p>₹330</p>
-              <button className="add-to-cart-button">Add to Cart</button>
+              <button className="add-to-cart-button" onClick={() => this.addToCart({ name: 'Margherita Pizza', price: 10.99 })}>Add to Cart</button>
             </div>
           </div>
 
           {/* Food 2 */}
-          <div className="food-box" onClick={() => this.addToCart('Grilled Salmon', 15.99)}>
+          <div className="food-box" onClick={() => this.addToCart({ name: 'Grilled Salmon', price: 15.99 })}>
             <img src="/grilled_salmon.jpg" alt="Grilled Salmon" />
             <div className="food-details">
               <p>Grilled Salmon</p>
               <p>₹500</p>
-              <button className="add-to-cart-button">Add to Cart</button>
+              <button className="add-to-cart-button" onClick={() => this.addToCart({ name: 'Grilled Salmon', price: 15.99 })}>Add to Cart</button>
             </div>
           </div>
 
           {/* Food 3 */}
-          <div className="food-box" onClick={() => this.addToCart('Chocolate Lava Cake', 7.99)}>
+          <div className="food-box" onClick={() => this.addToCart({ name: 'Chocolate Lava Cake', price: 7.99 })}>
             <img src="/chocolate_lava_cake.jpg" alt="Chocolate Lava Cake" />
             <div className="food-details">
               <p>Chocolate Lava Cake</p>
               <p>₹150</p>
-              <button className="add-to-cart-button">Add to Cart</button>
+              <button className="add-to-cart-button" onClick={() => this.addToCart({ name: 'Chocolate Lava Cake', price: 7.99 })}>Add to Cart</button>
             </div>
           </div>
         </div>
@@ -69,3 +71,6 @@ class FoodCart extends React.Component {
 }
 
 export default FoodCart;
+
+
+

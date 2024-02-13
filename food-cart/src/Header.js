@@ -65,7 +65,7 @@ function Header() {
           <input type="text" placeholder="Search" className="search-box" />
         
         </div>
-        <button onClick={openShoppingCart}>
+        <button onClick={openShoppingCart} className='cartButton'>
         <a href="#" id="cartLink">
           {/* You can replace the cart logo URL below with your own */}
           <img src="/shopping-cart.png" alt="Cart Logo" className="cart-logo" />
@@ -74,7 +74,7 @@ function Header() {
         <ShoppingCart
         isOpen={isShoppingCartOpen}
         onClose={closeShoppingCart}
-
+        
       />
       </nav>
     </header>

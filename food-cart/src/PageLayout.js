@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Header from './Header';
-import ShoppingCart from './ShoppingCart'; 
 import FoodCart from './FoodCart';
 import Footer from './Footer';
 import './PageLayout.css';
+import Slider from'./slider';
 
 const PageLayout = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -17,14 +17,10 @@ const PageLayout = () => {
     <div>
       <Header />
       <div className='restaurant-page'>
-        <div className="food-cards">
+        <Slider />
           {/* Render FoodCart component and pass addItemToCart function as prop */}
           <FoodCart addItemToCart={addItemToCart} />
-        </div>
-        <div className="shopping-cart">
-          {/* Render ShoppingCart component and pass cartItems as prop */}
-          
-        </div>
+        
       </div>
       <Footer />
     </div>
