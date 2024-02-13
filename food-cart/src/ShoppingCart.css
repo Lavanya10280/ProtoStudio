@@ -7,14 +7,38 @@ body {
   background-color:rgb(251, 251, 251);
 }
 
+.backround-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(52, 189, 93, 0.1);
+  max-width: 400px;
+  width: fit-content;
+  margin: auto;
+}
+.closeButton{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #f44336;
+}
 
+.closeButton::before {
+  content: "×";
+  font-size: 20px;
+  color: white;
+}
 .container {
-  max-width: 600px;
-  margin: 200px auto;
+  max-width: 325px;
   background-color:#fffcfc94;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 20px rgba(52, 189, 93, 0.3);
+  box-shadow: 0 0 20px rgba(127, 132, 128, 0.3);
+  opacity: 1;
 }
 
 
@@ -42,9 +66,10 @@ button {
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-  margin: 5px 2px;
+  margin: 5px 10px;
   border-radius: 4px;
 }
+
 
 button.del{
   margin-left: 0;

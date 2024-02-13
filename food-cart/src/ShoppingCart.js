@@ -1,14 +1,15 @@
+
 import React, { useState } from 'react';
 import './ShoppingCart.css'; 
 import PaymentModal from './Payment.js';
+import Modal from 'react-modal';
 
 
-
-const ShoppingCart = () => {
-
+const ShoppingCart = ({ isOpen, onClose,cartItems}) => {
+  
   const [items, setItems] = useState([
-    { id: 1, name: 'Item 1', price: 10, quantity: 2 },
-    { id: 2, name: 'Item 2', price: 15, quantity: 1 },
+    { id: 1, name: 'Margherita Pizza', price: 10.99, quantity: 2 },
+    { id: 2, name: 'Chocolate Lava Cake', price: 7.99, quantity: 1 },
     // Add more items as needed
   ]);
 
@@ -19,6 +20,8 @@ const ShoppingCart = () => {
     const updatedItems = items.filter(item => item.id !== itemId);
     setItems(updatedItems);
   };
+
+
 
 
   const handleIncreaseQuantity = (itemId) => {
@@ -49,7 +52,13 @@ const ShoppingCart = () => {
     setIsPaymentModalOpen(false);
   };
   return (
+    <Modal 
+      isOpen={isOpen}
+      onRequestClose={onClose}
+      className="backround-page"
+      >
     <div  className="container">
+    <button onClick={onClose} className="closeButton"></button>
       <h1>Your Cart</h1>
       
       {/* Add new item section */}
@@ -91,8 +100,11 @@ const ShoppingCart = () => {
         amountToPay={calculateSubtotal()}
 
       />
+      
+        
+     
       </div>
-    
+      </Modal>
   );
 };
 

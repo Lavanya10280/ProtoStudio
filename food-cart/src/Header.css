@@ -51,7 +51,7 @@ body {
   }
   
   .search-box {
-    padding: 10px;
+    padding: 20px;
     width: 250px;
     background-color: black;  /* Set the background color to black */
     color: white;  /* Set text color to white */
@@ -70,8 +70,9 @@ body {
   }
   
   #cartLink {
-    padding: 15px;
+    padding: 30px;
     border-radius: 5px;
+    margin-left: 20px;
   }
   
   .cart-logo {
