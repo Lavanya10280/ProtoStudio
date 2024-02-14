@@ -5,26 +5,30 @@
 }
 
 .food-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .food-box {
+  flex: 0 1 calc(20% - 20px);
+  max-width: calc(20% - 20px);
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
   margin: 10px;
-}
-h2 {
-  font-size: 54px; /* Adjust the font size as needed */
-  margin-bottom: 20px; /* Add some margin to push the items down */
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
 }
 
+h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
 
 .food-box:hover {
   transform: scale(1.05);
@@ -32,28 +36,96 @@ h2 {
 
 .food-box img {
   width: 100%;
-  height: 150px; /* Adjust the height as needed */
+  height: 150px;
   object-fit: cover;
 }
 
+/* FoodCart.css */
+
+/* ... (previous styles remain unchanged) */
+
 .food-details {
   padding: 10px;
+  display: flex;
+  flex-direction: column; /* Keep flex-direction as column */
+  justify-content: space-between;
+  height: 100%;
+}
+
+.food-name {
+  font-size: 16px;
+  margin-bottom: 5px; /* Add margin between name and price */
+  text-align: left; /* Align the text to the left */
+}
+
+.food-price {
+  font-size: 14px;
+  text-align: left; /* Align the text to the left */
 }
 
 .add-to-cart-button {
-  margin-top: 10px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 8px 12px;
+  margin-top: auto; /* Push the button to the bottom */
+  background-color: transparent; /* Remove background color */
+  color: #4caf50; /* Set the text color to green */
+  border: 1px solid #4caf50; /* Add a green border with 1px width */
+  padding: 6px 10px;
   cursor: pointer;
   border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; /* Add transition effect for background, text color, and border */
 }
 
 .add-to-cart-button:hover {
-  background-color: #45a049;
+  background-color: #4caf50; /* Change background color on hover */
+  color: white; /* Change text color on hover */
+  border-color: #4caf50; /* Change border color on hover */
 }
-.food-box img {
-  width: 100%;
-  height: 50%; 
+
+/* Increased size and styling for category buttons */
+.food-categories {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.food-categories button {
+  color: black;
+  border: 1px solid transparent; /* Add a default transparent border */
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 18px;
+  transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease; /* Add transition effect for background, border, and text color */
+}
+
+/* Customize pastel colors for all category buttons */
+.food-categories button#all-button {
+  background-color: hsl(157, 49%, 46%); /* Pastel blue */
+  border-color: hsl(151, 61%, 57%); /* Border color for All button */
+}
+
+.food-categories button#indian-button {
+  background-color: #f4a261; /* Pastel orange */
+  border-color: #d9802f; /* Border color for Indian button */
+}
+
+.food-categories button#italian-button {
+  background-color: #2a9d8f; /* Pastel green */
+  border-color: #207d72; /* Border color for Italian button */
+}
+
+.food-categories button#asian-button {
+  background-color: #e9c46a; /* Pastel yellow */
+  border-color: #d3a243; /* Border color for Asian button */
+}
+
+.food-categories button#dessert-button {
+  background-color: #f4f4f4; /* Pastel grey */
+  border-color: #d4d4d4; /* Border color for Dessert button */
+}
+
+.food-categories button:hover {
+  background-color: #6ab861; /* Change color on hover */
+  border-color: #6fdf8dcd; /* Change border color on hover */
+  color: #4edd55bb; /* Change text color on hover */
 }

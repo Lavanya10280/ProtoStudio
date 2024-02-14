@@ -3,7 +3,7 @@ import Header from './Header';
 import ShoppingCart from './ShoppingCart'; 
 import FoodCart from './FoodCart';
 import Footer from './Footer';
-import './PageLayout.css';
+
 const PageLayout = () => {
   return (
     <div>
@@ -13,7 +13,7 @@ const PageLayout = () => {
         <FoodCart />
       </div>
       <div className="shopping-cart">
-        <ShoppingCart />
+      
       </div>
       </div>
      <Footer />

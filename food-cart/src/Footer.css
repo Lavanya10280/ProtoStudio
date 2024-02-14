@@ -27,3 +27,15 @@ footer {
   font-size: 12px;
   color: #666;
 }
+/* Add styles for each category */
+.food-box.italian {
+  background-color: #ffcccb; /* Light coral for Italian category */
+}
+
+.food-box.asian {
+  background-color: #b0e57c; /* Mint green for Asian category */
+}
+
+.food-box.dessert {
+  background-color: #f0e68c; /* Khaki for Dessert category */
+}
