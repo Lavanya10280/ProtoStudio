@@ -1,29 +1,26 @@
-
 import React, { useState } from 'react';
 import './ShoppingCart.css'; 
 import PaymentModal from './Payment.js';
 import Modal from 'react-modal';
+import { useCart } from './CartContext';
 
-
-const ShoppingCart = ({ isOpen, onClose,cartItems}) => {
+const ShoppingCart = ({ isOpen, onClose }) => { 
+  const { cartItems: contextCartItems } = useCart(); 
   
-  const [items, setItems] = useState([
-    { id: 1, name: 'Margherita Pizza', price: 10.99, quantity: 2 },
-    { id: 2, name: 'Chocolate Lava Cake', price: 7.99, quantity: 1 },
-    // Add more items as needed
-  ]);
+  // State for managing cart items
+  const [items, setItems] = useState(contextCartItems);
 
-  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false); // State for the payment modal
+  // State for the payment modal
+  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false); 
   const [amountToPay, setAmountToPay] = useState(0);
 
+  // Function to remove an item from the cart
   const handleDelete = (itemId) => {
     const updatedItems = items.filter(item => item.id !== itemId);
     setItems(updatedItems);
   };
 
-
-
-
+  // Function to increase quantity of an item in the cart
   const handleIncreaseQuantity = (itemId) => {
     setItems(prevItems =>
       prevItems.map(item =>
@@ -32,6 +29,7 @@ const ShoppingCart = ({ isOpen, onClose,cartItems}) => {
     );
   };
   
+  // Function to decrease quantity of an item in the cart
   const handleDecreaseQuantity = (itemId) => {
     setItems(prevItems =>
       prevItems.map(item =>
@@ -39,74 +37,69 @@ const ShoppingCart = ({ isOpen, onClose,cartItems}) => {
       )
     );
   };
+
+  // Function to calculate subtotal of the items in the cart
   const calculateSubtotal = () => {
     return items.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
+  // Function to handle payment
   const handlePayment = () => {
     setIsPaymentModalOpen(true); // Open the payment modal
     setAmountToPay(calculateSubtotal()); // Set the amount to pay based on the subtotal
   };
 
+  // Function to close payment modal
   const closePaymentModal = () => {
     setIsPaymentModalOpen(false);
   };
+
   return (
     <Modal 
       isOpen={isOpen}
       onRequestClose={onClose}
       className="backround-page"
-      >
-    <div  className="container">
-    <button onClick={onClose} className="closeButton"></button>
-      <h1>Your Cart</h1>
+    >
+      <div  className="container">
+        <button onClick={onClose} className="closeButton"></button>
+        <h1>Your Cart</h1>
       
-      {/* Add new item section */}
-      {/* (You can add your own form inputs to capture new item details) */}
-      <div>
-        {/* Empty space for adding new items */}
-        {/* ... */}
-      </div>
+        {/* List of items */}
+        <ul>
+          {items.map(item => (
+            <li key={item.id} className='itemdesc'>
+              <div className='fixed-length-text'>
+                {item.name} <br />
+                <button onClick={() => handleDelete(item.id)} className='button del'>Delete</button>
+              </div> 
+              <t /> 
+              <div className="text-end">
+                ${item.price} 
+                <button onClick={() => handleIncreaseQuantity(item.id)} >+</button>
+                <div className='quantity-border'> {item.quantity}</div>
+                <button onClick={() => handleDecreaseQuantity(item.id)} >-</button><br />
+              </div>
+            </li>
+          ))}
+        </ul>
 
-      {/* List of items */}
-      <ul>
-        {items.map(item => (
-          <li key={item.id} className='itemdesc'>
-            <div className='fixed-length-text'>
-            {item.name} <br />
-            <button onClick={() => handleDelete(item.id)} className='button del'>Delete</button>
-            </div> 
-            <t /> 
-            <div className="text-end">
-              ${item.price} 
-            <button onClick={() => handleIncreaseQuantity(item.id)} >+</button>
-           <div className='quantity-border'> {item.quantity}</div>
-            <button onClick={() => handleDecreaseQuantity(item.id)} >-</button><br />
-            
-            </div>
-            
-          </li>
-        ))}
-      </ul>
+        {/* Subtotal */}
+        <p>Subtotal: ${calculateSubtotal()}</p>
 
-      {/* Subtotal */}
-      <p>Subtotal: ${calculateSubtotal()}</p>
-
-      {/* Payment button */}
-      <button onClick={handlePayment} className="button payment">Proceed to Payment</button>
-      <PaymentModal
-        isOpen={isPaymentModalOpen}
-        onClose={closePaymentModal}
-        amountToPay={calculateSubtotal()}
-
-      />
-      
+        {/* Payment button */}
+        <button onClick={handlePayment} className="button payment">Proceed to Payment</button>
         
-     
+        {/* Payment Modal */}
+        <PaymentModal
+          isOpen={isPaymentModalOpen}
+          onClose={closePaymentModal}
+          amountToPay={amountToPay}
+        />
       </div>
-      </Modal>
+    </Modal>
   );
 };
 
 export default ShoppingCart;
+
 

@@ -1,10 +1,10 @@
-import React, { useEffect, useState  } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Header.css'; // Import the CSS file for styling
 import ShoppingCart from './ShoppingCart';
 
-
 function Header() {
   const [isShoppingCartOpen, setIsShoppingCartOpen] = useState(false);
+
   useEffect(() => {
     // JavaScript logic to apply styles and functionality
     const header = document.querySelector('header');
@@ -45,13 +45,15 @@ function Header() {
     cartLink.style.padding = '15px';
     cartLink.style.borderRadius = '5px';
   }, []); // Empty dependency array to run the effect only once
+
   const openShoppingCart = () => {
-    setIsShoppingCartOpen(true);   
+    setIsShoppingCartOpen(true);
   };
 
   const closeShoppingCart = () => {
     setIsShoppingCartOpen(false);
   };
+
   return (
     <header>
       <div className="logo-container">
@@ -63,20 +65,20 @@ function Header() {
         <a href="#" id="contactLink">Contact</a>
         <div className="search-container">
           <input type="text" placeholder="Search" className="search-box" />
-        
         </div>
         <button onClick={openShoppingCart} className='cartButton'>
-        <a href="#" id="cartLink">
-          {/* You can replace the cart logo URL below with your own */}
-          <img src="/shopping-cart.png" alt="Cart Logo" className="cart-logo" />
-        </a>
+          <a href="#" id="cartLink">
+            {/* You can replace the cart logo URL below with your own */}
+            <img src="/shopping-cart.png" alt="Cart Logo" className="cart-logo" />
+          </a>
         </button>
-        <ShoppingCart
-        isOpen={isShoppingCartOpen}
-        onClose={closeShoppingCart}
-        
-      />
       </nav>
+      {isShoppingCartOpen && (
+        <ShoppingCart
+          isOpen={isShoppingCartOpen}
+          onClose={closeShoppingCart}
+        />
+      )}
     </header>
   );
 }
