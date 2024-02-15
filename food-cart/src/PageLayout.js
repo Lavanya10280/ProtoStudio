@@ -26,7 +26,7 @@ const PageLayout = () => {
       </div>
         <Slider />
           {/* Render FoodCart component and pass addItemToCart function as prop */}
-          <FoodCart addItemToCart={addItemToCart} />
+          
         
       </div>
       <Footer />

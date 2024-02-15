@@ -1,0 +1,33 @@
+/* Slider.css */
+
+.slider-container {
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  margin: auto;
+}
+
+.slider {
+  display: flex;
+}
+
+.slide-image {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 10px;
+  opacity: 0.7; /* Adjust the opacity as needed */
+  transition: opacity 0.5s;
+}
+
+.slide-image.active {
+  opacity: 1;
+}
+
+button {
+  font-size: 24px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}

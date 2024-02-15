@@ -1,56 +1,58 @@
+// Slider.js
+
 import React, { useState } from 'react';
-import './slider1.css'; // Import CSS file
+import './Slider.css';
 
-function Slider() {
-    const [slideIndex, setSlideIndex] = useState(1);
+const foodImages = [
+  'image1.jpg',
+  'image2.jpg',
+  'image3.jpg',
+  'image4.jpg',
+  'image5.jpg',
+  'image6.jpg',
+  'image7.jpg',
+  'image8.jpg',
+  'image9.jpg',
+  
+  'image14.jpg',
+  'image15.jpg',
+  'image16.jpg',
+  'image17.jpg',
+  'image18.jpg',
+  'image19.jpg',
+  'image20.jpg',
+  // Add more images as needed
+];
 
-    function plusSlides(n) {
-        setSlideIndex(prevIndex => prevIndex + n);
-    }
+const imagesPerSet = 4;
 
-    function showSlides(n) {
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {
-            setSlideIndex(1);
-        }
-        if (n < 1) {
-            setSlideIndex(slides.length);
-        }
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (let i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-    }
-    
+const Slider = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-    return (
-        <div className="slideshow-container">
-            <div className="mySlides fade">
-                <source media="(max-width: 700px)" srcSet="pesto (2).jpg" />
-                <img src="pesto (1).jpg" style={{ width: '100%' }} alt="Pesto Slide" />
-            </div>
-            <div className="mySlides fade">
-                <source media="(max-width: 700px)" srcSet="ramen (1).jpg" />
-                <img src="ramen.jpg" style={{ width: '100%' }} alt="Ramen Slide" />
-            </div>
-            <div className="mySlides fade">
-                <img src="basil-pizza (1).jpg" style={{ width: '100%' }} alt="Basil Pizza Slide" />
-            </div>
-            <div className="mySlides fade">
-                <img src="biryani (2).jpg" style={{ width: '100%' }} alt="Biryani Slide" />
-            </div>
-            <div className="mySlides fade">
-                <img src="vanilla-icecream (1).jpg" style={{ width: '100%' }} alt="Vanilla Ice Cream Slide" />
-            </div>
-            <a className="prev" onClick={() => plusSlides(-1)}>❮</a>
-            <a className="next" onClick={() => plusSlides(1)}>❯</a>
-        </div>
-    );
-}
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % (foodImages.length * imagesPerSet));
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + (foodImages.length * imagesPerSet)) % (foodImages.length * imagesPerSet));
+  };
+
+  return (
+    <div className="slider-container">
+      <button onClick={prevImage}>&#9665;</button>
+      <div className="slider">
+        {foodImages.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`food-${index}`}
+            className={index === currentImageIndex % imagesPerSet ? 'slide-image active' : 'slide-image'}
+          />
+        ))}
+      </div>
+      <button onClick={nextImage}>&#9655;</button>
+    </div>
+  );
+};
 
 export default Slider;
