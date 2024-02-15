@@ -5,8 +5,8 @@
 .food-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content:flex-start;
+  gap: 6%;
 }
 
 .food-box {
@@ -69,6 +69,8 @@ h2 {
   padding: 6px 10px;
   cursor: pointer;
   border-radius: 4px;
+  width: 100px;
+  align-self: center;
   transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; /* Add transition effect for background, text color, and border */
 }
 
@@ -125,5 +127,5 @@ h2 {
 .food-categories button:hover {
   background-color: #6ab861; /* Change color on hover */
   border-color: #6fdf8dcd; /* Change border color on hover */
-  color: #4edd55bb; /* Change text color on hover */
+  color: #fff; /* Change text color on hover */
 }
