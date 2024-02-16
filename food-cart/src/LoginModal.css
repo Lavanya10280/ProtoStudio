@@ -20,7 +20,7 @@
     cursor: pointer;
     border: none;
     text-align: center;
-    
+    font-weight: bold;
 }
 
 .login-button-btn:hover{
