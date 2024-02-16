@@ -1,15 +1,15 @@
-/* Home.css */
+/* Home.css 
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   display: flex;
-  background-image: url('D:\react-food-delivery-app\food-cart\public\pexels.jpg');
+ 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-
+*/
 .left {
   flex: 1;
   background-color: #f7f7f7; /* Changed background color for the left side */

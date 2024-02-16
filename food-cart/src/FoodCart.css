@@ -62,22 +62,22 @@ h2 {
 }
 
 .add-to-cart-button {
-  margin-top: auto; /* Push the button to the bottom */
-  background-color: transparent; /* Remove background color */
-  color: #4caf50; /* Set the text color to green */
-  border: 1px solid #4caf50; /* Add a green border with 1px width */
+  margin-top: auto; 
+  background-color: transparent; 
+  color: #e05e5d; 
+  border: 1px solid #e05e5d; 
   padding: 6px 10px;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 5px;
   width: 100px;
   align-self: center;
-  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; /* Add transition effect for background, text color, and border */
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; 
 }
 
 .add-to-cart-button:hover {
-  background-color: #4caf50; /* Change background color on hover */
-  color: white; /* Change text color on hover */
-  border-color: #4caf50; /* Change border color on hover */
+  background-color:#e05e5d; 
+  color: rgb(0, 0, 0); 
+  border-color: #e05e5d 
 }
 
 /* Increased size and styling for category buttons */
@@ -97,6 +97,7 @@ h2 {
   font-size: 18px;
   transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease; /* Add transition effect for background, border, and text color */
 }
+
 
 /* Customize pastel colors for all category buttons */
 .food-categories button#all-button {
@@ -125,7 +126,7 @@ h2 {
 }
 
 .food-categories button:hover {
-  background-color: #6ab861; /* Change color on hover */
-  border-color: #6fdf8dcd; /* Change border color on hover */
+  background-color: #e05e5d; /* Change color on hover */
+  border-color: #e05e5d; /* Change border color on hover */
   color: #fff; /* Change text color on hover */
 }

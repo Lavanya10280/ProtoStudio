@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import Header from './Header';
 import FoodCart from './FoodCart';
 import Footer from './Footer';
+import { CartProvider } from './CartContext';
 
 import './PageLayout.css';
-import Slider from'./slider';
+import Slider from'./Slider';
 
 const PageLayout = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -17,17 +18,20 @@ const PageLayout = () => {
   return (
     <div>
       <Header />
+     
+      <Slider />
       <div className='restaurant-page'>
-      <div className="food-cards">
-        <FoodCart />
-      </div>
-      <div className="shopping-cart">
       
-      </div>
-        <Slider />
-          {/* Render FoodCart component and pass addItemToCart function as prop */}
-          <FoodCart addItemToCart={addItemToCart} />
+      <div className="food-cards">
+      
+        <FoodCart />
+        <div>
         
+        </div>
+      </div>
+
+
+      
       </div>
       <Footer />
     </div>

@@ -1,3 +1,4 @@
+
 // Slider.js
 
 import React, { useState } from 'react';
@@ -45,7 +46,7 @@ const Slider = () => {
           <img
             key={index}
             src={image}
-            alt={`food-${index}`}
+            alt={'food-${index}'}
             className={index === currentImageIndex % imagesPerSet ? 'slide-image active' : 'slide-image'}
           />
         ))}

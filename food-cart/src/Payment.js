@@ -22,7 +22,11 @@ const PaymentModal = ({ isOpen, onClose, amountToPay }) => {
       onRequestClose={onClose}
       contentLabel="Payment Modal"
       className="PaymentModal"
+      
     >
+      <div>
+        <button onClick={onClose} className="closeButton">&times;</button>
+      </div>
       <h1>Payment Details</h1>
 
       <div className="PaymentModalButtons">
@@ -68,9 +72,7 @@ const PaymentModal = ({ isOpen, onClose, amountToPay }) => {
 
       <PaymentPopup amountToPay={amountToPay}/> 
 
-      <div>
-        <button onClick={onClose} className="closeButton"></button>
-      </div>
+      
     </Modal>
     
     

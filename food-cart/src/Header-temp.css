@@ -7,7 +7,7 @@ body {
   }
   
   header {
-    background-color:#e67675;
+    background-color: transparent;
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -18,11 +18,9 @@ body {
     display: flex;
     align-items: flex-end;
   }
-
-
   
   .logo {
-    max-width: 100px;  /* Adjusted size for the bulb logo */
+    max-width: 100px; /* Adjusted size for the bulb logo */
     max-height: 100px;
     margin-bottom: 5px; /* Adjusted margin to move the logo down */
   }
@@ -41,11 +39,8 @@ body {
     font-weight: bold;
     padding: 15px;
     border-radius: 5px;
+    background-color: transparent; /* Move background color here */
   }
-  
-  #homeLink { background-color: transparent; }
-  #aboutLink { background-color: transparent; }
-  #contactLink { background-color: transparent; }
   
   .search-container {
     position: relative;
@@ -53,17 +48,17 @@ body {
   }
   
   .search-box {
-    padding: 10px;
+    padding: 20px; /* Changed padding */
     width: 250px;
-    background-color:#f5c0c0;
-    color: white;
+    background-color: #f5c0c0; /* Set the background color to black */
+    color: white; /* Set text color to white */
     border: none;
     border-radius: 5px;
     outline: none;
-  } 
+  }
   
   .search-logo {
-    max-width: 30px;  /* Adjusted size for the search logo */
+    max-width: 30px; /* Adjusted size for the search logo */
     max-height: 30px;
     position: absolute;
     right: 10px;
@@ -72,15 +67,16 @@ body {
   }
   
   #cartLink {
-    padding: 30px;
+    padding: 30px; /* Changed padding */
     border-radius: 5px;
     margin-left: 20px;
   }
   
   .cart-logo {
-    max-width: 30px;  /* Adjusted size for the cart logo */
+    max-width: 30px; /* Adjusted size for the cart logo */
     max-height: 40px;
   }
+  
   .cartButton {
     text-decoration: none;
     background-color: transparent;
@@ -88,11 +84,27 @@ body {
     margin: 0 0;
     font-size: 18px;
     font-weight: bold;
-    padding: 10px 0;
+    padding: 10px 0; /* Changed padding */
     border-radius: 5px;
   }
- .cartButton:hover {
+  
+  .cartButton:hover {
     background-color: transparent;
     color: #333;
+  }
+  
+  /* HeaderStyles.css */
+  
+  header {
+    background-color: #8e8282;
+  }
+  
+  .search-box {
+    padding: 10px; /* Changed padding */
+    background-color: black;
+  }
+  
+  #cartLink {
+    padding: 15px; /* Changed padding */
   }
   

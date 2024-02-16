@@ -22,15 +22,15 @@ body {
 }
 .closeButton{
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #f44336;
+    top: 0px;
+    right: 7px;
+    font-size: 30px;
+    color: #565353;
+    cursor: pointer;
 }
 
-.closeButton::before {
-  content: "×";
-  font-size: 20px;
-  color: white;
+.closeButton:hover{
+  background-color: #ffffff;
 }
 .container {
   max-width: 355px;
@@ -86,7 +86,7 @@ button.del{
 }
 
 button:hover {
-  background-color: #f31e07;
+  background-color:#f39191;
 }
 
 p {
@@ -96,18 +96,25 @@ p {
 }
 
 button.payment {
-  width: 300px; 
-  height: 50px; 
-  background-color: #e74c3c;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 16px;
-  margin: 20px 5px;
+  width: 300px;
+    height: 40px;
+    padding: 10px 15px;
+    background-color: #e05e5d;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    border-radius: 10px;
+    align-self: center;
+    margin-left: 10px ;
+    margin-right:0%;
   
 }
 
 button.payment:hover {
-  background-color: #c0392b;
+  background-color: #e05e5d;
+    color: white;
 }
 
 .h2 {
@@ -175,35 +182,42 @@ button.payment:hover {
 }
 
 .PaymentModal .payButton{
-  width: 300px; 
-  height: 50px;
+  width: 300px;
+  height: 40px;
+  padding: 10px 15px;
+  background-color: #e05e5d;
+  color: black;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  border-radius: 10px;
+  align-self: center;
+  margin-left: 10px ;
+  margin-right:0%;
 
 }
 
 .PaymentModal button:hover {
-  background-color: #45a049;
+  background-color: #e05e5d;
+    color: white;
 }
 
 .PaymentModal .closeButton {
   position: absolute;
-  top: 2px;
-  right: 2px;
-  background-color: #f44336;
+  top: 0px;
+  right: 7px;
+  font-size: 30px;
+  color: #000000;
+  cursor: pointer;
+  background-color: transparent;
 }
 
 .PaymentModal .closeButton:hover {
-  background-color: #d32f2f;
+  color: #000000;
+  background-color: transparent;
 }
 
-.PaymentModal .closeButton::before {
-  content: "×";
-  font-size: 20px;
-  color: white;
-}
-
-.PaymentModal .closeButton:focus {
-  outline: none;
-}
 
 /* Add this to your existing styles or create a new file, e.g., PaymentModalButtons.css */
 
@@ -229,12 +243,12 @@ button.payment:hover {
 
 .PaymentModalButtons button.paypal {
   margin-bottom: 10px;
-  background-color: #003087;
+  background-color: #be3b3b;
   color: #fff;
 }
 
 .PaymentModalButtons button.gpay {
-  background-color: #4285f4;
+  background-color: #e67675;
   color: #fff;
 }
 
@@ -251,38 +265,32 @@ button.payment:hover {
 }
 
 
-/*
-.PaymentModal .input-row {
-  display: flex;
-  align-items: center;
-}
-
-.PaymentModal .input-row > div {
-  display: flex;
-  flex-direction: column;
-  margin-right: 10px; 
-}
-
-.PaymentModal .input-row label {
-  margin-bottom: 5px;
-}
-
-.PaymentModal .input-row input {
-  width: 100%;
-  padding: 8px;
-}
-*/
-.PaymentPopup {
+.popup-message {
   position: fixed;
-  top: 50%;
+  top: 20px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #ffffff;
-  padding: 20px;
+  transform: translateX(-50%);
+  background-color: white;
+  color: #4caf50; /* Green color for the message text */
+  padding: 10px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
+.popup-message.visible {
+  opacity: 1;
+}
+
+.tick-icon {
+  color: #4caf50; /* Green color for the tick icon */
+  margin-right: 10px;
+}
 .PaymentModal .input-row {
   justify-self: center;
   display: flex;
@@ -306,7 +314,7 @@ button.payment:hover {
 
 .itemdesc {
   width: 300px; /* Set your desired width */
-  border: 1px solid #ccc;
+  
   padding: 10px;
   overflow: hidden; /* Hide overflow text */
 }

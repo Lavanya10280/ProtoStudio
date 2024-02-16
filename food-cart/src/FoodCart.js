@@ -180,6 +180,7 @@ const FoodCart = () => {
   };
 
   return (
+    
     <div className="food-cart-container">
       <h2></h2>
       <div className="food-categories">
