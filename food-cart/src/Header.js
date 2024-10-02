@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import './Header.css'; // Import the CSS file for styling
 import ShoppingCart from './ShoppingCart';
 import LoginModal from './LoginModal'
+import { Link, Outlet } from 'react-router-dom';
+
 function Header() {
   const [isShoppingCartOpen, setIsShoppingCartOpen] = useState(false);
 
@@ -20,12 +22,14 @@ function Header() {
   return (
     <header>
       <div className="logo-container">
+      <Link to='/' id= "Link"> 
         <img src="/logo.png" alt="logo" className="logo" />
+        </ Link>
       </div>
       <nav>
-        <a href="#" id="homeLink">Home</a>
-        <a href="#" id="aboutLink">About</a>
-        <a href="#" id="contactLink">Contact</a>
+        <Link to='/Home' id= "homeLink"> Home </Link>
+        <Link to='/AboutUs' id= "aboutLink"> About </Link>
+        <Link to='/ContactForm' id= "contactLink"> Contact </Link>
         <div className="search-container">
           <input type="text" placeholder="Search" className="search-box" />
         </div>
@@ -44,7 +48,9 @@ function Header() {
       )}
       <LoginModal />
     </header>
+    
   );
+ 
 }
 
 export default Header;

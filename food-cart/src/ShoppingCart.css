@@ -32,7 +32,7 @@ body {
 .closeButton:hover{
   background-color: #ffffff;
 }
-.container {
+.sc-container {
   max-width: 355px;
   background-color:#fffcfc94;
   padding: 20px 20px;

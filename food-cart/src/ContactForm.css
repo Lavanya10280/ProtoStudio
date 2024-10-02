@@ -2,6 +2,7 @@
   width: 300px;
   margin: 0 auto;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  display: block;
 }
 
 .contact-form input,
@@ -14,15 +15,17 @@
   border: 3px solid #2f2e2e;
   border-radius: 5px;
   box-sizing: border-box;
+  align-items:baseline;
 }
 
 .contact-form button {
-  background-color: #4CAF50;
+  background-color: #e67675;
   color: white;
   border: none;
   cursor: pointer;
+  margin-left: 0%;
 }
 
 .contact-form button:hover {
-  background-color: #45a049;
+  background-color: #f5c0c0;
 }

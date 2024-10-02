@@ -60,7 +60,7 @@ const ShoppingCart = ({ isOpen, onClose }) => {
       onRequestClose={onClose}
       className="backround-page"
     >
-      <div  className="container">
+      <div  className="sc-container">
         <button onClick={onClose} className="closeButton">&times;</button>
         <h1>Your Cart</h1>
       

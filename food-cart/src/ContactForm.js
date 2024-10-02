@@ -26,14 +26,17 @@ const ContactForm = () => {
   };
 
   return (
-    
+    <div className="contact-text">
+      <div>
+      <h2>We would love to receive your valuable feedback!</h2>
+      </div>
     <div className="contact-form">
-      <h2>Lets'connect</h2>
       <input type="text" id="name" placeholder="Your Name" value={formData.name} onChange={handleChange} />
       <input type="email" id="email" placeholder="Your Mail" value={formData.email} onChange={handleChange} />
       <input type="tel" id="phone" placeholder="Your Phone Number" value={formData.phone} onChange={handleChange} />
       <textarea id="message" placeholder="Your Message" value={formData.message} onChange={handleChange} />
       <button id="send-button" onClick={handleSubmit}>Send</button>
+    </div>
     </div>
   );
 };

@@ -3,26 +3,30 @@ import './App.css'; // Import your CSS file
 import './ShoppingCart.css';
 import PageLayout from './PageLayout';
 import { CartProvider } from './CartContext';
+import Home from './Home';
+import AboutUs from './AboutUs';
+import ContactForm from './ContactForm';
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './Header';
 
 
 const App = () => {
-  return (/*
+  return (
     <Router>
       <div className="App">
+        <CartProvider>
         <Header />
         <Routes>
-          <Route path="/food-cart/src/Home.js" element={<Home />} />
-          <Route path="/food-cart/src/AboutUs.js" element={<AboutUs />} />
-          <Route path="/food-cart/src/ContactForm.js" element={<ContactForm />} />
-          <Route path="/ShoppingCart" element={<ShoppingCart />} />
-        </Routes>*/
-        <CartProvider>
-          <PageLayout />
+          <Route exact path="/" element={<PageLayout />} />
+          <Route exact path="/Home" element={<Home />} />
+          <Route exact path="/AboutUs" element={<AboutUs />} />
+          <Route exact path="/ContactForm" element={<ContactForm />} />
+        </Routes>
         </CartProvider>
-     // </div>
-    //</Router>
+        
+      </div>
+    </Router>
   );
 };
 
